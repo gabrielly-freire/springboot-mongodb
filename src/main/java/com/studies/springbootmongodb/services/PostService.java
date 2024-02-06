@@ -1,7 +1,6 @@
 package com.studies.springbootmongodb.services;
 
 import com.studies.springbootmongodb.domain.Post;
-import com.studies.springbootmongodb.domain.User;
 import com.studies.springbootmongodb.repositories.PostRepository;
 import com.studies.springbootmongodb.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,6 @@ public class PostService {
     }
 
     public List<Post> findByTitle(String text){
-        return postRepository.findByTitleContainingIgnoreCase(text);
+        return postRepository.searchTitle(text);
     }
 }
